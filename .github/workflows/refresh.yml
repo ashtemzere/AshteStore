@@ -24,15 +24,3 @@ jobs:
           git add .
           git commit -m "Automated daily refresh $(date)" || exit 0
           git push
-
-      - name: Send Telegram Notification
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            ✅ **AshteStore Updated**
-            
-            ستۆرەکە بە سەرکەوتوویی نوێ کرایەوە.
-            📅 کات: $(date)
-            🚀 هەموو لینکەکان چالاک کرانەوە.
